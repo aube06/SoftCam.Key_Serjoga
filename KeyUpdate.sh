@@ -4,14 +4,14 @@
 # Author:......audi06_19    2018/2019                          #
 # Support:.....www.dreamosat-forum.com                         #
 # E-Mail:......admin@dreamosat-forum.com                       #
-# Date:........26.11.2018                                      #
+# Date:........12.05.2020                                      #
 # Description:.KeyUpdate                                       #
 ################################################################
 FIN="==================================================";
 echo $FIN;
 echo ".....:: LÜTFEN BEKLEYİNİZ .... PLEASE WAIT ::.....";
 ##################################################
-URL="https://raw.githubusercontent.com/audi06/SoftCam.Key_Serjoga/master";
+URL="https://raw.githubusercontent.com/aube06/SoftCam.Key_Serjoga/master";
 # Files
 TMP=`mktemp -d`
 cd ${TMP}
