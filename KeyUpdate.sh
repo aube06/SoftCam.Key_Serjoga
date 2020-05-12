@@ -45,7 +45,7 @@ if [ -f ${TMP}/SoftCam.Key ] ; then
   # copy
   cp -rd ${TMP}/SoftCam.Key $check;
   #wget $crt $agent --quiet -O - $URL/README.md | grep -B100 -ia 'enigma2-plugin-extensions-KeyUpdate' | sed -e 's/<[^>]*>//g' | grep -va ".deb" | grep -va ".ipk";
-  curl -Lk -s -m 4 -m 6 ${URL}/README.md | grep -B100 -ia 'enigma2-plugin-extensions-KeyUpdate' | sed -e 's/<[^>]*>//g' | grep -va ".ipk" | grep -va ".deb";
+  curl -Lk -s -m 4 -m 6 ${URL}/README.md | grep -B100 -ia 'enigma2-plugin-extensions-KeyUpdate' | sed -e 's/<[^>]*>//g' | grep -va ".deb" | grep -va ".ipk";
 else
   echo "";
   echo "Failed to download SoftCam.Key file !!!"
