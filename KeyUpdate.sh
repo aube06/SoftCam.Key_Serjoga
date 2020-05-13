@@ -1,9 +1,9 @@
 #!/bin/sh
 #DESCRIPTION=This script created by Levi45 @www.sat-linux.com
 ###############################################################################
-KeysUpdater="http://sat-linux.com/addons/MipsMulticam/Mips/KeysUpdater.sh"
-SoftcamKeys="http://sat-linux.com/addons/SoftCam.Key"
-Constantcw="http://sat-linux.com/addons/constant.cw"
+#KeysUpdater="http://sat-linux.com/addons/MipsMulticam/Mips/KeysUpdater.sh"
+SoftcamKeys="https://raw.githubusercontent.com/aube06/SoftCam.Key_Serjoga/master"
+#Constantcw="http://sat-linux.com/addons/constant.cw"
 echo ""
 echo ""
 echo "Downloading ${KeysUpdater}"
