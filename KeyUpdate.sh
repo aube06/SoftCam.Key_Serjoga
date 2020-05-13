@@ -1,36 +1,65 @@
-#!/bin/sh
-#DESCRIPTION=This script created by Levi45 @www.sat-linux.com
-###############################################################################
-#KeysUpdater="http://sat-linux.com/addons/MipsMulticam/Mips/KeysUpdater.sh"
-SoftcamKeys="https://raw.githubusercontent.com/aube06/SoftCam.Key_Serjoga/master"
-#Constantcw="http://sat-linux.com/addons/constant.cw"
-echo ""
-echo ""
-#echo "Downloading ${KeysUpdater}"
-#wget ${KeysUpdater} -O /usr/lib/enigma2/python/Plugins/Extensions/Levi45MipsEmuKeysUpdater/KeysUpdater.sh || echo "Error: Couldn't connect to ${KeysUpdater}"
-#echo ""
-#chmod 775 /usr/lib/enigma2/python/Plugins/Extensions/Levi45MipsEmuKeysUpdater/KeysUpdater.sh
-#echo ""
-echo "Downloading ${SoftcamKeys}"
-wget ${SoftcamKeys} -O /usr/keys/SoftCam.Key || echo "Error: Couldn't connect to ${SoftcamKeys}"
-echo ""
-echo "Downloading ${SoftcamKeys}"
-wget ${SoftcamKeys} -O /etc/tuxbox/config/SoftCam.Key || echo "Error: Couldn't connect to ${SoftcamKeys}"
-#echo ""
-#echo "Downloading ${Constantcw}"
-#wget ${Constantcw} -O /etc/tuxbox/config/constant.cw || echo "Error: Couldn't connect to ${Constantcw}"
-#echo "Downloading ${Constantcw}"
-#wget ${Constantcw} -O /usr/keys/constant.cw || echo "Error: Couldn't connect to ${Constantcw}"
-echo ""
-echo ""
-echo "#########################################################"
-echo "#               Levi45 @WWW.SAT-LINUX.COM               #"
-echo "#########################################################"
-echo "#              KEYS INSTALLED SUCCESSFULLY              #"
-echo "#########################################################"
-echo "#                      GUI RESTARTING                   #"
-echo "#########################################################"
-init 4
-killall -9 enigma2 > /dev/null 2>&1
-init 3
+#!/bin/bash
+################################################################
+# Title:.......KeyUpdate                                       #
+# Author:......audi06_19    2018/2019                          #
+# Support:.....www.dreamosat-forum.com                         #
+# E-Mail:......admin@dreamosat-forum.com                       #
+# Date:........26.11.2018                                      #
+# Description:.KeyUpdate                                       #
+################################################################
+FIN="==================================================";
+echo $FIN;
+echo ".....:: LÜTFEN BEKLEYiNiZ .... PLEASE WAIT ::.....";
+##################################################
+URL="https://raw.githubusercontent.com/aube06/SoftCam.Key_Serjoga/master";
+# Files
+TMP=`mktemp -d`
+cd ${TMP}
+[ -d /etc/tuxbox/config/ ] || mkdir -p /etc/tuxbox/config/;
+[ -d /usr/keys ] || mkdir -p /usr/keys;
+# Github
+#agent="--header='User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'"
+#crt="--no-check-certificate"
+
+#wget -q $crt $agent $URL/SoftCam.Key
+curl -s -Lbk -m 4 -m 6 ${URL}/SoftCam.Key -o SoftCam.Key
+# check softcamkey
+if [ -f ${TMP}/SoftCam.Key ] ; then
+  #
+  chmod 0755 ${TMP}/SoftCam.Key -R;
+  # check
+  if [ -f /etc/tuxbox/config/SoftCam.Key ] ; then
+    check="/etc/tuxbox/config/SoftCam.Key";
+  elif [ -f /etc/tuxbox/config/oscam-emu/SoftCam.Key ] ; then
+    check="/etc/tuxbox/config/oscam-emu/SoftCam.Key";
+  elif [ -f /etc/tuxbox/config/oscam/SoftCam.Key ] ; then
+    check="/etc/tuxbox/config/oscam/SoftCam.Key";
+  else
+    echo "The SoftCam.Key file was not found.\n";
+    echo "It was sent to the following folder."
+    echo ": /etc/tuxbox/config/"
+    echo ": /usr/keys/"
+    check="/etc/tuxbox/config/SoftCam.Key";
+  #  exit 0;
+  fi;
+  # copy
+  cp -rd ${TMP}/SoftCam.Key $check;
+  #wget $crt $agent --quiet -O - $URL/README.md | grep -B100 -ia 'enigma2-plugin-extensions-KeyUpdate' | sed -e 's/<[^>]*>//g' | grep -va ".deb" | grep -va ".ipk";
+  curl -Lk -s -m 4 -m 6 ${URL}/README.md | grep -B100 -ia 'enigma2-plugin-extensions-KeyUpdate' | sed -e 's/<[^>]*>//g' | grep -va ".deb" | grep -va ".ipk";
+else
+  echo "";
+  echo "Failed to download SoftCam.Key file !!!"
+  echo "SoftCam.Key dosyasÄ± indirilemedi !!!"
+  echo "";
+  rm -rf ${TMP} > /dev/null;
+  exit 0;
+fi
+echo "SoftCam.Key file sent. $check;";
+echo "";
+echo "SoftCam.Key updated. Do not forget to restart the EMU. good looking ...";
+echo "";
+echo "::: Thank you: by Serjoga :::";
+echo "Support: www.dreamosat-forum.com ";
+echo $FIN
+rm -rf ${TMP} > /dev/null;
 exit 0
