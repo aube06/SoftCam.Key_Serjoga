@@ -49,7 +49,7 @@ if [ -f ${TMP}/SoftCam.Key ] ; then
 else
   echo "";
   echo "Failed to download SoftCam.Key file !!!"
-  echo "SoftCam.Key dosyasÄ± indirilemedi !!!"
+  echo "SoftCam.Key dosyası indirilemedi !!!"
   echo "";
   rm -rf ${TMP} > /dev/null;
   exit 0;
