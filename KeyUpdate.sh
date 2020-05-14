@@ -58,7 +58,7 @@ echo "SoftCam.Key file sent. $check;";
 echo "";
 echo "SoftCam.Key updated. Do not forget to restart the EMU. good looking ...";
 echo "";
-echo "::: Thank you: by Serjoga :::";
+echo "::: ************************* :::";
 echo "Support: www.dreamosat-forum.com ";
 echo $FIN
 rm -rf ${TMP} > /dev/null;
