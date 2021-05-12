@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################################
 # Title:.......KeyUpdate                                       #
-# Author:......audi06_19    2018/2019                          #
+# Author:......2021                                            #
 # Support:.....www.dreamosat-forum.com                         #
 # E-Mail:......admin@dreamosat-forum.com                       #
 # Date:........26.11.2018                                      #
@@ -15,31 +15,31 @@ URL="https://raw.githubusercontent.com/aube06/SoftCam.Key_Serjoga/master";
 # Files
 TMP=`mktemp -d`
 cd ${TMP}
-[ -d /etc/tuxbox/config/ ] || mkdir -p /etc/tuxbox/config/;
+[ -d /usr/lib/enigma2/python/Plugins/Extensions/TURKvod/ ] || mkdir -p /usr/lib/enigma2/python/Plugins/Extensions/TURKvod/;
 [ -d /usr/keys ] || mkdir -p /usr/keys;
 # Github
 #agent="--header='User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'"
 #crt="--no-check-certificate"
 
 #wget -q $crt $agent $URL/SoftCam.Key
-curl -s -Lbk -m 4 -m 6 ${URL}/SoftCam.Key -o SoftCam.Key
-# check softcamkey
-if [ -f ${TMP}/SoftCam.Key ] ; then
+curl -s -Lbk -m 4 -m 6 ${URL}/TURKvodLokal.xml -o TURKvodLokal.xml
+# check TURKvodLokalxml
+if [ -f ${TMP}/TURKvodLokal.xml ] ; then
   #
-  chmod 0755 ${TMP}/SoftCam.Key -R;
+  chmod 0600 ${TMP}/TURKvodLokal.xml -R;
   # check
-  if [ -f /etc/tuxbox/config/SoftCam.Key ] ; then
-    check="/etc/tuxbox/config/SoftCam.Key";
-  elif [ -f /etc/tuxbox/config/oscam-emu/SoftCam.Key ] ; then
-    check="/etc/tuxbox/config/oscam-emu/SoftCam.Key";
-  elif [ -f /etc/tuxbox/config/oscam/SoftCam.Key ] ; then
-    check="/etc/tuxbox/config/oscam/SoftCam.Key";
+  if [ -f /usr/lib/enigma2/python/Plugins/Extensions/TURKvod/TURKvodLokal.xml ] ; then
+    check="/usr/lib/enigma2/python/Plugins/Extensions/TURKvod/TURKvodLokal.xml";
+  elif [ -f /usr/lib/enigma2/python/Plugins/Extensions/TURKvod/TURKvodLokal.xml ] ; then
+    check="/usr/lib/enigma2/python/Plugins/Extensions/TURKvod/TURKvodLokal.xml";
+  elif [ -f /usr/lib/enigma2/python/Plugins/Extensions/TURKvod/TURKvodLokal.xml ] ; then
+    check="/usr/lib/enigma2/python/Plugins/Extensions/TURKvod/TURKvodLokal.xml";
   else
     echo "The SoftCam.Key file was not found.\n";
     echo "It was sent to the following folder."
-    echo ": /etc/tuxbox/config/"
+    echo ": /usr/lib/enigma2/python/Plugins/Extensions/TURKvod/"
     echo ": /usr/keys/"
-    check="/etc/tuxbox/config/SoftCam.Key";
+    check="/usr/lib/enigma2/python/Plugins/Extensions/TURKvod/TURKvodLokal.xml";
   #  exit 0;
   fi;
   # copy
