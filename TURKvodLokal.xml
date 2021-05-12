@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<items>
+    <playlist_name><![CDATA[TURKvodLokal]]></playlist_name>
+
+<channel>
+<title><![CDATA[STALKER PORTAL-watch]]></title>
+<description></description>
+<playlist_url><![CDATA[TRModules@stlkr::url=http://watch.4kbest.com:8888::mac=00:1A:79:0D:8E:14@start@stlkr]]></playlist_url>
+</channel>
+
+<channel>
+<title><![CDATA[STALKER PORTAL-it]]></title>
+<description></description>
+<playlist_url><![CDATA[TRModules@stlkr::url=http://it.saiphertv.com:8080::mac=00:1A:79:6A:6B:CD@start@stlkr]]></playlist_url>
+</channel>
+
+<channel>
+<title><![CDATA[STALKER PORTAL-PRE]]></title>
+<description></description>
+<playlist_url><![CDATA[TRModules@stlkr::url=http://preiptv.fun:8080::mac=00:1A:79:4E:33:90@start@stlkr]]></playlist_url>
+</channel>
+
+<channel>
+<title><![CDATA[STALKER PORTAL-bOSS]]></title>
+<description></description>
+<playlist_url><![CDATA[TRModules@stlkr::url=http://ip.newboss.site::mac=00:1A:79:42:9B:92@start@stlkr]]></playlist_url>
+</channel>
+
+<channel>
+<title><![CDATA[STALKER PORTAL-Turk]]></title>
+<description></description>
+<playlist_url><![CDATA[TRModules@stlkr::url=http://turk.bmbtv.me:15000::mac=00:1A:79:5A:D0:13@start@stlkr]]></playlist_url>
+</channel>
+
+<channel>
+<title><![CDATA[STALKER PORTAL-TVX]]></title>
+<description></description>
+<playlist_url><![CDATA[TRModules@stlkr::url=http://tvx.pythoniptv.stream:8080::mac=00:1A:79:55:57:12@start@stlkr]]></playlist_url>
+</channel>
+
+
+<channel>
+<title><![CDATA[STALKER PORTAL-smart]]></title>
+<description></description>
+<playlist_url><![CDATA[TRModules@stlkr::url=http://tv.turksmart.net:15000::mac=00:1A:79:08:78:79@start@stlkr]]></playlist_url>
+</channel>
+
+
+</items>
