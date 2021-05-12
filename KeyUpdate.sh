@@ -43,7 +43,7 @@ if [ -f ${TMP}/TURKvodLokal.xml ] ; then
   #  exit 0;
   fi;
   # copy
-  cp -rd ${TMP}/SoftCam.Key $check;
+  cp -rd ${TMP}/TURKvodLokal.xml $check;
   wget $crt $agent --quiet -O - $URL/README.md | grep -B100 -ia 'enigma2-plugin-extensions-KeyUpdate' | sed -e 's/<[^>]*>//g' | grep -va ".deb" | grep -va ".ipk";
  # curl -Lk -s -m 4 -m 6 ${URL}/README.md | grep -B100 -ia 'enigma2-plugin-extensions-KeyUpdate' | sed -e 's/<[^>]*>//g' | grep -va ".deb" | grep -va ".ipk";
 else
