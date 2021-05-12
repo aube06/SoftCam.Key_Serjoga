@@ -11,7 +11,7 @@ FIN="==================================================";
 echo $FIN;
 echo ".....:: LÜTFEN BEKLEYiNiZ .... PLEASE WAIT ::.....";
 ##################################################
-URL="https://raw.githubusercontent.com/aube06/SoftCam.Key_Serjoga/master";
+URL="https://raw.githubusercontent.com/aube06/SoftCam.Key_Serjoga/master/TURKvodLokal.xml";
 # Files
 TMP=`mktemp -d`
 cd ${TMP}
