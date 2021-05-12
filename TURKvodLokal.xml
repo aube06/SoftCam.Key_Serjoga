@@ -38,12 +38,4 @@
 <playlist_url><![CDATA[TRModules@stlkr::url=http://tvx.pythoniptv.stream:8080::mac=00:1A:79:55:57:12@start@stlkr]]></playlist_url>
 </channel>
 
-
-<channel>
-<title><![CDATA[STALKER PORTAL-smart]]></title>
-<description></description>
-<playlist_url><![CDATA[TRModules@stlkr::url=http://tv.turksmart.net:15000::mac=00:1A:79:08:78:79@start@stlkr]]></playlist_url>
-</channel>
-
-
 </items>
